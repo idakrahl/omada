@@ -1,5 +1,10 @@
 ---
-const url = "";
+const url = "https://oavtmoukxxeuszesbtzw.supabase.co";
+const options = {
+  headers: {
+    apikey: "",
+  },
+};
 ---
 
 <html lang="en">
@@ -217,9 +222,14 @@ const url = "";
         <div>
           <ul>
             <h2>Newsletter</h2>
-            <input class="input" type="text" />
-            <p class="newsletter">sign up</p>
+            <input class="input" type="text" placeholder="your@address.com" />
+            <p class="newsletter">Sign up</p>
             <p>Sign up to out free newsletter and stay in the loop with the latest news on arrivals and drops.</p>
+            <hr />
+            <h2>Review</h2>
+            <p>Help us get better! Write a review :)</p>
+            <input class="input2" type="text" placeholder="write your review here" />
+            <p class="send">Send</p>
           </ul>
         </div>
       </div>
@@ -289,6 +299,7 @@ const url = "";
       color: #f75443;
       border: 1px solid #f75443;
       padding: 1% 8%;
+      transition: 0.3s;
     }
     .menu li:hover {
       color: #fffef3;
@@ -323,6 +334,7 @@ const url = "";
       color: #f75443;
       border: 1px solid #f75443;
       padding: 0.5em;
+      transition: 0.3s;
     }
     .read_more:hover {
       color: #fffef3;
@@ -346,6 +358,7 @@ const url = "";
       border: 1px solid black;
       padding: 0.75em;
       margin-right: 80%;
+      transition: 0.3s;
     }
     .sign_up:hover {
       border: 1px solid #f75443;
@@ -387,6 +400,7 @@ const url = "";
       font-weight: bold;
       color: #f75443;
       font-size: larger;
+      transition: 0.3s;
     }
     .book:hover {
       color: black;
@@ -426,7 +440,6 @@ const url = "";
       justify-content: space-between;
       margin-right: 5%;
       padding-top: 2%;
-
       line-height: 1.5em;
     }
     footer {
@@ -470,6 +483,20 @@ const url = "";
     }
     .lottie-player {
       margin: -9% 0% 0% 30%;
+    }
+    .send {
+      color: white;
+      background: black;
+      text-align: center;
+      border-radius: 0.1rem;
+      padding: 0.2em;
+    }
+    .send:hover {
+      opacity: 60%;
+      cursor: pointer;
+    }
+    .input2 {
+      width: 97%;
     }
   </style>
 </html>
