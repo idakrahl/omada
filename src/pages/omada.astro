@@ -2,7 +2,7 @@
 import Form from "../components/Form.astro";
 import Testimonials from "../components/testimonials.astro";
 
-const url = "https://oavtmoukxxeuszesbtzw.supabase.co/rest/v1/Testimonials?approved=is.true";
+const url = "https://oavtmoukxxeuszesbtzw.supabase.co/rest/v1/Testimonials?approve=is.true";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9hdnRtb3VreHhldXN6ZXNidHp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODIwNjI0MjksImV4cCI6MTk5NzYzODQyOX0.kT4O2jvJ8HvwuoS98-Z6R1PWo8dU-SSsGfL29ivC5oM";
 
 const response = await fetch(url, {
@@ -15,6 +15,7 @@ const response = await fetch(url, {
 });
 
 const udsagn = await response.json();
+console.log(udsagn);
 
 function getFirstNChars(str, length) {
   return str.substring(0, length);
@@ -40,15 +41,19 @@ function getFirstNChars(str, length) {
         <img class="deli_header" src="public/imgs/omada_deli_header.webp" alt="deli" />
       </div>
       <ul class="menu">
-        <li>About</li>
-        <li>News and events</li>
-        <li>Tastings and functions</li>
-        <li>Deli goods</li>
+        <a href="#about">
+          <li>About</li>
+        </a>
+        <a href="#news">
+          <li>News and events</li>
+        </a>
+        <a href="#tastings"> <li>Tastings and functions</li></a>
+        <a href="#deli_goods"> <li>Deli goods</li></a>
       </ul>
       <div class="grid_1-2">
         <div class="left">
           <ul class="about">
-            <h2>About Omada Deli</h2>
+            <h2 id="about">About Omada Deli</h2>
             <li>Øster Farimagsgade 26</li>
             <li>2100 København Ø</li>
             <br />
@@ -73,7 +78,7 @@ function getFirstNChars(str, length) {
 
       <hr />
       <div class="margin">
-        <h2>News and events</h2>
+        <h2 id="news">News and events</h2>
         <p>What’s happening in the deli over the coming weeks…</p>
         <p class="sign_up">Sign up for news →</p>
       </div>
@@ -111,7 +116,7 @@ function getFirstNChars(str, length) {
       </div>
       <hr />
       <div class="margin">
-        <h2>Tasting and functions</h2>
+        <h2 id="tastings">Tastings and functions</h2>
         <p>What’s happening in the deli over the coming weeks…</p>
       </div>
       <img src="public/imgs/tasting_menu.png" alt="tasting_menu" class="tasting_menu" />
@@ -120,7 +125,7 @@ function getFirstNChars(str, length) {
       </div>
       <hr />
       <div class="margin">
-        <h2>Deli Goods</h2>
+        <h2 id="deli_goods">Deli Goods</h2>
         <div class="shop">
           <p>Thirsty for more? Explore the best of our latest drops on our online shop</p>
           <a class="knap" href="https://omada.wine/">Shop wines at Omada.wine →</a>
@@ -204,11 +209,12 @@ function getFirstNChars(str, length) {
       <hr />
       <div class="margin2">
         <h2>REVIEWS FROM OUR CUSTOMERS</h2>
-        <!-- {
-        udsagn.map((testimonial) => {
-          return <Testimonials name={testimonial.name} age={testimonial.age} review={getFirstNChars(testimonial.review, 30) + "..."} />;
-        })
-      } -->
+
+        {
+          udsagn.map((testimonial) => {
+            return <Testimonials name={testimonial.name} age={testimonial.age} review={getFirstNChars(testimonial.review, 30) + "..."} />;
+          })
+        }
 
         <div class="grid_1-1-1">
           <div>
@@ -282,6 +288,9 @@ function getFirstNChars(str, length) {
       font-family: "Iowan";
       src: url("public/font/iowan_old_style_.ttf");
     }
+    html {
+      scroll-behavior: smooth;
+    }
     header {
       display: grid;
       grid-template-columns: 1fr 2fr 1fr;
@@ -327,15 +336,16 @@ function getFirstNChars(str, length) {
       margin-left: -3%;
       margin-bottom: 5%;
     }
-    .menu li {
+    .menu a {
       text-align: center;
       font-family: Iowan;
       color: #f75443;
       border: 1px solid #f75443;
       padding: 1% 8%;
       transition: 0.3s;
+      text-decoration: none;
     }
-    .menu li:hover {
+    .menu a:hover {
       color: #fffef3;
       border: 1px solid #fffef3;
       background-color: #f75443;
