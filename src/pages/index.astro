@@ -2,14 +2,101 @@
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Omada</title>
+  </head>
+  <body>
+    <header></header>
+    <main class="grid_1-1">
+      <div>
+        <a href="https://omada.wine/">
+          <h1 class="h1_wine">OMADA WINE</h1>
+          <h2 class="h2_wine">Go to page</h2>
+        </a>
+      </div>
+      <div>
+        <a href="/omada">
+          <h1 class="h1_deli">OMADA DELI</h1>
+          <h2 class="h2_deli">Go to page</h2>
+        </a>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+  <style>
+    @font-face {
+      font-family: "Aviano Sans";
+      src: url("public/font/aviano_sans.otf");
+    }
+    @font-face {
+      font-family: "Iowan";
+      src: url("public/font/iowan_old_style_.ttf");
+    }
+    body {
+      background-image: url(public/imgs/forside.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    a {
+      text-decoration: none;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 50%;
+      font-family: Aviano Sans;
+      font-size: 50px;
+      margin-left: 10%;
+      margin-right: 10%;
+      padding: 0.2em;
+    }
+    .h1_wine {
+      background-color: #ed5544;
+      color: #fffef3;
+    }
+    .h1_deli {
+      background-color: #fffef3;
+      color: #ed5544;
+    }
+    .h1_deli:hover {
+      color: #fffef3;
+      background-color: #ed5544;
+    }
+    .h1_wine:hover {
+      color: #ed5544;
+      background-color: #fffef3;
+    }
+    h2 {
+      text-align: center;
+      font-family: Iwaon;
+      font-size: x-large;
+      margin-left: 35%;
+      margin-right: 35%;
+      padding: 0.3em;
+      font-weight: lighter;
+    }
+    .h2_wine {
+      background-color: #ed5544;
+      color: #fffef3;
+    }
+    .h2_wine:hover {
+      color: #ed5544;
+      background-color: #fffef3;
+    }
+    .h2_deli {
+      background-color: #fffef3;
+      color: #ed5544;
+    }
+    .h2_deli:hover {
+      color: #fffef3;
+      background-color: #ed5544;
+    }
+  </style>
 </html>
