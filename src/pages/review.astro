@@ -1,0 +1,180 @@
+---
+import Form from "../components/Form.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Review</title>
+  </head>
+  <body>
+    <header>
+      <p>←</p>
+      <h1>Omada Deli</h1>
+      <h3>wine · cheese · charcuterie · coffee · eggs · milk</h3>
+    </header>
+    <main class="grid_1-1">
+      <div>
+        <h2>“RIGTIG GOD DELI”</h2>
+        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tempore atque voluptates nemo nulla veritatis, magnam fugit adipisci recusandae dolore ipsam a suscipit, aliquam explicabo expedita, sunt ipsa necessitatibus libero!"</p>
+      </div>
+      <div>
+        <div>
+          <img src="" alt="Her skal der være billeder" />
+          <img src="" alt="Her skal der være billeder" />
+        </div>
+        <br />
+        <div>
+          <img src="" alt="Her skal der være billeder" />
+          <img src="" alt="Her skal der være billeder" />
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="grid_1-1-1-1">
+        <div>
+          <ul>
+            <h2>OMADA.WINE & DELI</h2>
+            <p>The dedicated online hideout for the worldly cosmopolitans, drinking from home.</p>
+            <img src="/imgs/kort.png" alt="kort" class="kort" />
+            <img src="/imgs/alder.png" alt="alder" class="alder" />
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>The Wine Journal</li>
+            <li>About us</li>
+            <li>Omada Industry (Wholesale)</li>
+            <li>Contact us</li>
+            <li>Delivery</li>
+            <li>Payments</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>Industry login</li>
+            <li>Partner login</li>
+            <li>Privacy login</li>
+            <li>Cookie Policy</li>
+            <li>Terms & Conditions</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <h2>Newsletter</h2>
+            <input class="input" type="text" placeholder="your@address.com" />
+            <p class="newsletter">Sign up</p>
+            <p>Sign up to out free newsletter and stay in the loop with the latest news on arrivals and drops.</p>
+            <hr />
+            <h2>Review</h2>
+            <p>Help us get better! Write a review :)</p>
+            <Form />
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<style>
+  header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  body {
+    background-color: #fffef3;
+  }
+
+  h1 {
+    font-family: Aviano Sans;
+    color: #f75443;
+    grid-column: 2;
+    text-align: center;
+    font-size: 95px;
+  }
+  h2 {
+    font-family: Aviano Sans;
+    color: #f75443;
+    font-weight: lighter;
+    font-size: xx-large;
+  }
+  h3 {
+    grid-row: 2;
+    grid-column: 2;
+    text-align: center;
+    font-family: Aviano Sans;
+    font-weight: lighter;
+    margin-top: -8%;
+  }
+  .img_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .deli_header {
+    grid-column: 2;
+    width: 120%;
+    place-self: end;
+  }
+  main {
+    margin: 5%;
+  }
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+  }
+  img {
+    margin-right: 5%;
+    margin-top: 10%;
+    font-size: 25px;
+  }
+  .grid_1-1-1-1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    margin-right: 5%;
+    padding-top: 2%;
+    line-height: 1.5em;
+  }
+  footer {
+    background-color: #ece9e0;
+    font-family: Iowan;
+  }
+  footer ul {
+    list-style: none;
+  }
+  footer li:hover {
+    cursor: pointer;
+    color: #f75443;
+  }
+
+  footer h2 {
+    font-size: large;
+    color: black;
+    font-weight: 100;
+  }
+  .kort {
+    width: 90%;
+  }
+  .alder {
+    width: 60%;
+    margin-top: 20%;
+  }
+  .input {
+    width: 100%;
+  }
+  .newsletter {
+    color: white;
+    background: black;
+    text-align: center;
+    width: 97.5%;
+    border-radius: 0.1rem;
+    padding: 0.5em;
+  }
+  .newsletter:hover {
+    opacity: 60%;
+    cursor: pointer;
+  }
+</style>
