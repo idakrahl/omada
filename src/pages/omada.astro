@@ -203,13 +203,6 @@ function getFirstNChars(str, length) {
       <hr />
       <div class="margin2">
         <h2>REVIEWS FROM OUR CUSTOMERS</h2>
-
-        {
-          udsagn.map((testimonial) => {
-            return <Testi name={testimonial.name} age={testimonial.age} review={getFirstNChars(testimonial.review, 30) + "..."} />;
-          })
-        }
-
         <div class="grid_1-1-1">
           <img class="review" src="/imgs/review1.jpg" alt="" />
 
@@ -218,6 +211,11 @@ function getFirstNChars(str, length) {
           <img class="review" src="/imgs/review3.jpg" alt="" />
         </div>
         <div class="grid_1-1-1">
+          {
+            udsagn.map((testimonial) => {
+              return <Testi name={testimonial.name} age={testimonial.age} review={getFirstNChars(testimonial.review, 30) + "..."} />;
+            })
+          }
           <div><p>“Lorem ipsum dolor sit amet. Sed provident sint sit harum repellat aut necessitatibus quia id ducimus expedita.”</p><p>Indsendt af Navn, Navnerson</p></div>
 
           <div><p>“Lorem ipsum dolor sit amet. Sed provident sint sit harum repellat aut necessitatibus quia id ducimus expedita.”</p><p>Indsendt af Navn, Navnerson</p></div>
