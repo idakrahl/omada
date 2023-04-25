@@ -5,14 +5,16 @@ import Form from "../components/Form.astro";
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Review</title>
   </head>
   <body>
     <header>
-      <p>←</p>
+      <a class="back" href="/omada">
+        <p>◀</p>
+      </a>
       <h1>Omada Deli</h1>
       <h3>wine · cheese · charcuterie · coffee · eggs · milk</h3>
     </header>
@@ -82,6 +84,17 @@ import Form from "../components/Form.astro";
   header {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+  }
+  .back {
+    margin-left: 10%;
+    color: #f75443;
+    font-size: 25px;
+    text-decoration: none;
+  }
+  .back:hover {
+    opacity: 50%;
+    font-size: 25px;
+    text-decoration: none;
   }
   body {
     background-color: #fffef3;
