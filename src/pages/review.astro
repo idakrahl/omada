@@ -19,19 +19,17 @@ import Form from "../components/Form.astro";
       <h3>wine · cheese · charcuterie · coffee · eggs · milk</h3>
     </header>
     <main class="grid_1-1">
-      <div>
-        <h2>“RIGTIG GOD DELI”</h2>
-        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tempore atque voluptates nemo nulla veritatis, magnam fugit adipisci recusandae dolore ipsam a suscipit, aliquam explicabo expedita, sunt ipsa necessitatibus libero!"</p>
+      <div class="tekst">
+        <h2>" ... selection is amazing!"</h2>
+        <p>
+          "If you're looking for a great wine retailer, look no further than Omada.wine. I, John Smith, have been a customer for years and their selection is amazing, and their prices are very competitive. What really sets them apart, though, is their customer service. They are always willing to
+          help you find the perfect wine for any occasion, and they truly care about their customers. I would definitely recommend Omaha.wine to anyone looking for a great wine buying experience."
+        </p>
+        <p>John Smith, 25</p>
       </div>
       <div>
         <div>
-          <img src="" alt="Her skal der være billeder" />
-          <img src="" alt="Her skal der være billeder" />
-        </div>
-        <br />
-        <div>
-          <img src="" alt="Her skal der være billeder" />
-          <img src="" alt="Her skal der være billeder" />
+          <img class="review_single" src="/imgs/review_single.png" alt="deli" />
         </div>
       </div>
     </main>
@@ -79,115 +77,172 @@ import Form from "../components/Form.astro";
       </div>
     </footer>
   </body>
+
+  <style>
+    header {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+    .back {
+      margin-left: 10%;
+      color: #f75443;
+      font-size: 25px;
+      text-decoration: none;
+    }
+    .back:hover {
+      opacity: 50%;
+      font-size: 25px;
+      text-decoration: none;
+    }
+    body {
+      background-color: #fffef3;
+    }
+
+    h1 {
+      font-family: Aviano Sans;
+      color: #f75443;
+      grid-column: 2;
+      text-align: center;
+      font-size: 95px;
+    }
+    h2 {
+      font-family: Aviano Sans;
+      color: #f75443;
+      font-weight: lighter;
+      font-size: xx-large;
+    }
+    h3 {
+      grid-row: 2;
+      grid-column: 2;
+      text-align: center;
+      font-family: Aviano Sans;
+      font-weight: lighter;
+      margin-top: -8%;
+    }
+    .review_single {
+      width: 100%;
+      place-self: end;
+    }
+    .tekst {
+      margin-right: 10%;
+      margin-left: 10%;
+    }
+
+    .grid_1-1 {
+      margin-top: 5%;
+      margin-bottom: 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .grid_1-1-1-1 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-content: space-between;
+      margin-right: 5%;
+      padding-top: 2%;
+      line-height: 1.5em;
+    }
+    footer {
+      background-color: #ece9e0;
+      font-family: Iowan;
+    }
+    footer ul {
+      list-style: none;
+    }
+    footer li:hover {
+      cursor: pointer;
+      color: #f75443;
+    }
+
+    footer h2 {
+      font-size: large;
+      color: black;
+      font-weight: 100;
+    }
+    .kort {
+      width: 90%;
+    }
+    .alder {
+      width: 60%;
+      margin-top: 20%;
+    }
+    .input {
+      width: 100%;
+    }
+    .newsletter {
+      color: white;
+      background: black;
+      text-align: center;
+      width: 97.5%;
+      border-radius: 0.1rem;
+      padding: 0.5em;
+    }
+    .newsletter:hover {
+      opacity: 60%;
+      cursor: pointer;
+    }
+    @media only screen and (max-width: 800px) {
+      .back {
+        font-size: 15px;
+        margin-top: 0%;
+      }
+      header {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        margin-top: 15%;
+        font-size: 50px;
+        line-height: 1em;
+        margin-left: -7%;
+      }
+      h2 {
+        font-family: Aviano Sans;
+        color: #f75443;
+        font-weight: lighter;
+        font-size: large;
+      }
+      h3 {
+        font-size: 11px;
+        margin-left: -7%;
+      }
+      .grid_1-1 {
+        margin-top: -2%;
+
+        grid-template-columns: 1fr;
+      }
+      .tekst {
+        margin-right: 2%;
+        margin-left: 2%;
+        font-size: 14px;
+        line-height: 1.25rem;
+      }
+      .review_single {
+        width: 100%;
+      }
+      .grid_1-1-1-1 {
+        grid-template-columns: 1fr;
+      }
+
+      .kort {
+        width: 50%;
+      }
+      .alder {
+        width: 50%;
+        margin-top: 0%;
+      }
+      footer li {
+        font-size: small;
+        margin-bottom: -2%;
+      }
+      .newsletter {
+        color: white;
+        background: black;
+        text-align: center;
+        width: 97.5%;
+        border-radius: 0.1rem;
+        padding: 0.5em;
+      }
+    }
+  </style>
 </html>
-<style>
-  header {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-  }
-  .back {
-    margin-left: 10%;
-    color: #f75443;
-    font-size: 25px;
-    text-decoration: none;
-  }
-  .back:hover {
-    opacity: 50%;
-    font-size: 25px;
-    text-decoration: none;
-  }
-  body {
-    background-color: #fffef3;
-  }
-
-  h1 {
-    font-family: Aviano Sans;
-    color: #f75443;
-    grid-column: 2;
-    text-align: center;
-    font-size: 95px;
-  }
-  h2 {
-    font-family: Aviano Sans;
-    color: #f75443;
-    font-weight: lighter;
-    font-size: xx-large;
-  }
-  h3 {
-    grid-row: 2;
-    grid-column: 2;
-    text-align: center;
-    font-family: Aviano Sans;
-    font-weight: lighter;
-    margin-top: -8%;
-  }
-  .img_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  .deli_header {
-    grid-column: 2;
-    width: 120%;
-    place-self: end;
-  }
-  main {
-    margin: 5%;
-  }
-  .grid_1-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5%;
-  }
-  img {
-    margin-right: 5%;
-    margin-top: 10%;
-    font-size: 25px;
-  }
-  .grid_1-1-1-1 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: space-between;
-    margin-right: 5%;
-    padding-top: 2%;
-    line-height: 1.5em;
-  }
-  footer {
-    background-color: #ece9e0;
-    font-family: Iowan;
-  }
-  footer ul {
-    list-style: none;
-  }
-  footer li:hover {
-    cursor: pointer;
-    color: #f75443;
-  }
-
-  footer h2 {
-    font-size: large;
-    color: black;
-    font-weight: 100;
-  }
-  .kort {
-    width: 90%;
-  }
-  .alder {
-    width: 60%;
-    margin-top: 20%;
-  }
-  .input {
-    width: 100%;
-  }
-  .newsletter {
-    color: white;
-    background: black;
-    text-align: center;
-    width: 97.5%;
-    border-radius: 0.1rem;
-    padding: 0.5em;
-  }
-  .newsletter:hover {
-    opacity: 60%;
-    cursor: pointer;
-  }
-</style>

@@ -2,8 +2,35 @@
 const { name, review, age } = Astro.props;
 ---
 
-<li class="testimonial">
-  <p>{review}</p>
-  <h2>{name}</h2>
-  <h3>{age}</h3>
-</li>
+<div class="review">
+  <a href="/review">
+    <p>{review} <br /> <br /> {name}, {age}</p>
+  </a>
+</div>
+<style>
+  @font-face {
+    font-family: "Iowan";
+    src: url("/font/iowan_old_style_.ttf");
+  }
+  p,
+  a {
+    font-family: Iowan;
+    text-decoration: none;
+    color: black;
+  }
+
+  div {
+    width: 80%;
+  }
+
+  p:hover {
+    color: #f75443;
+  }
+  @media only screen and (max-width: 800px) {
+    p {
+      font-size: 60%;
+      margin-left: 5%;
+      margin-right: -24%;
+    }
+  }
+</style>

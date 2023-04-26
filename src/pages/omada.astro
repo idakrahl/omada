@@ -9,8 +9,6 @@ const response = await fetch(url, {
   method: "GET",
   headers: {
     apikey: key,
-    Accept: "application/json",
-    "Content-Type": "application/json",
   },
 });
 
@@ -130,8 +128,8 @@ function getFirstNChars(str, length) {
           <a href="https://omada.wine/shop/deli-goods/wine-glasses/">
             <img src="/imgs/vin2.jpg" alt="" />
             <div class="pris">
-              <p class="deli_goods">Deli goods</p>
-              <p>33,50€</p>
+              <p class="deli_goods">Wine glasses</p>
+              <p>€ 8</p>
             </div>
           </a>
         </div>
@@ -139,8 +137,8 @@ function getFirstNChars(str, length) {
           <a href="https://omada.wine/shop/deli-goods/coffee-gamay-of-the-morning/">
             <img src="/imgs/kaffe.jpg" alt="" />
             <div class="pris">
-              <p class="deli_goods">Deli goods</p>
-              <p>13€</p>
+              <p class="deli_goods">Coffee – Gamay of the Morning</p>
+              <p>€ 13-39,5</p>
             </div>
           </a>
         </div>
@@ -148,8 +146,8 @@ function getFirstNChars(str, length) {
           <a href="https://omada.wine/">
             <img src="/imgs/vin3.jpg" alt="" />
             <div class="pris">
-              <p class="deli_goods">Deli goods</p>
-              <p>13€</p>
+              <p class="deli_goods">L'antidote</p>
+              <p>€ 35</p>
             </div>
           </a>
         </div>
@@ -158,7 +156,7 @@ function getFirstNChars(str, length) {
             <img src="/imgs/juice2.jpg" alt="" />
             <div class="pris">
               <p class="deli_goods">Deli goods</p>
-              <p>13€</p>
+              <p>€ 13</p>
             </div>
           </a>
         </div>
@@ -166,8 +164,8 @@ function getFirstNChars(str, length) {
           <a href="https://omada.wine/shop/red/une-tranche-de-la-chapelle-2019-philippe-jambon-gerard-belaid/">
             <img src="/imgs/vin4.jpg" alt="" />
             <div class="pris">
-              <p class="deli_goods">Deli goods</p>
-              <p>13€</p>
+              <p class="deli_goods">Une Tranche de la Chapelle 2019</p>
+              <p>€ 33,5</p>
             </div>
           </a>
         </div>
@@ -176,7 +174,7 @@ function getFirstNChars(str, length) {
             <img src="/imgs/juice3.jpg" alt="" />
             <div class="pris">
               <p class="deli_goods">Deli goods</p>
-              <p>13€</p>
+              <p>€ 13</p>
             </div>
           </a>
         </div>
@@ -185,7 +183,7 @@ function getFirstNChars(str, length) {
             <img src="/imgs/juice1.jpg" alt="" />
             <div class="pris">
               <p class="deli_goods">Deli goods</p>
-              <p>13€</p>
+              <p>€ 13</p>
             </div>
           </a>
         </div>
@@ -194,34 +192,35 @@ function getFirstNChars(str, length) {
             <img src="/imgs/krydder.jpg" alt="" />
             <div class="pris">
               <p class="deli_goods">Deli goods</p>
-              <p>13€</p>
+              <p>€ 11,5</p>
             </div>
           </a>
         </div>
       </div>
-
       <hr />
       <div class="margin2">
         <h2>REVIEWS FROM OUR CUSTOMERS</h2>
         <div class="grid_1-1-1">
-          <img class="review" src="/imgs/review1.jpg" alt="" />
-
-          <img class="review" src="/imgs/review2.jpg" alt="" />
-
-          <img class="review" src="/imgs/review3.jpg" alt="" />
+          <a href="/review">
+            <img class="review" src="/imgs/review1.jpg" alt="" />
+          </a>
+          <a href="/review">
+            <img class="review" src="/imgs/review2.jpg" alt="" />
+          </a>
+          <a href="/review">
+            <img class="review" src="/imgs/review3.jpg" alt="" />
+          </a>
         </div>
+
         <div class="grid_1-1-1">
           {
             udsagn.map((testimonial) => {
-              return <Testi name={testimonial.name} age={testimonial.age} review={getFirstNChars(testimonial.review, 30) + "..."} />;
+              console.log("test");
+              return <Testi name={testimonial.name} age={testimonial.age} review={getFirstNChars(testimonial.review, 200) + "..."} />;
             })
           }
-          <div><p>“Lorem ipsum dolor sit amet. Sed provident sint sit harum repellat aut necessitatibus quia id ducimus expedita.”</p><p>Indsendt af Navn, Navnerson</p></div>
-
-          <div><p>“Lorem ipsum dolor sit amet. Sed provident sint sit harum repellat aut necessitatibus quia id ducimus expedita.”</p><p>Indsendt af Navn, Navnerson</p></div>
-
-          <div><p>“Lorem ipsum dolor sit amet. Sed provident sint sit harum repellat aut necessitatibus quia id ducimus expedita.”</p><p>Indsendt af Navn, Navnerson</p></div>
         </div>
+
         <lottie-player class="lottie-player" src="https://lottie.host/e3629d43-e3a7-46f4-ad57-175dbe78b7f0/4uXwMI2ew3.json" background="transparent" speed="0.5" style="width: 500px; height: 500px" loop autoplay></lottie-player>
       </div>
       <footer>
@@ -486,6 +485,11 @@ function getFirstNChars(str, length) {
       }
       .review {
         width: 80%;
+        margin-left: -15%;
+      }
+      .review:hover {
+        opacity: 50%;
+        cursor: pointer;
       }
       .grid_1-1-1-1 {
         display: grid;
@@ -536,6 +540,138 @@ function getFirstNChars(str, length) {
       }
       .lottie-player {
         margin: -9% 0% 0% 30%;
+      }
+      @media only screen and (max-width: 800px) {
+        header {
+          grid-template-columns: 1fr;
+        }
+        h1 {
+          font-size: 50px;
+          line-height: 1em;
+          margin-left: -7%;
+        }
+        h2 {
+          font-size: x-large;
+        }
+        h3 {
+          font-size: 11px;
+          margin-left: -7%;
+        }
+        .img_grid {
+          display: block;
+        }
+        .deli_header {
+          width: 100%;
+        }
+        .menu {
+          display: grid;
+          gap: 5%;
+          margin-bottom: 5%;
+        }
+        .menu a {
+          padding: 5%;
+          width: 220%;
+          margin-left: -75%;
+          transition: 0.3s;
+          text-decoration: none;
+        }
+
+        .grid_1-2 {
+          grid-template-columns: 1fr;
+        }
+        .grid_1-5 {
+          grid-template-columns: 1fr;
+        }
+        .about li {
+          font-size: smaller;
+        }
+        p {
+          font-size: smaller;
+        }
+        .butik {
+          width: 100%;
+        }
+
+        .right {
+          margin-left: 0%;
+        }
+
+        .sign_up {
+          margin-right: 60%;
+        }
+
+        .wrapper .item {
+          margin-right: 2px;
+          opacity: 100%;
+          transition: 0.3s;
+        }
+
+        .wrapper .item2 {
+          margin-right: 2px;
+          opacity: 100%;
+          transition: 0.3s;
+        }
+
+        .tasting_menu {
+          max-width: 120%;
+          margin-left: -20%;
+        }
+        .book {
+          font-size: medium;
+        }
+
+        .shop {
+          display: block;
+          list-style: none;
+          margin-bottom: 7%;
+        }
+        .knap {
+          margin-left: 0%;
+          font-size: smaller;
+        }
+
+        .grid_1-1-1 {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          text-align: center;
+        }
+
+        .margin2 {
+          margin-left: 0%;
+          margin-right: 0%;
+        }
+        .review {
+          width: 100%;
+          margin-left: 0%;
+        }
+
+        .grid_1-1-1-1 {
+          grid-template-columns: 1fr;
+        }
+
+        .kort {
+          width: 50%;
+        }
+        .alder {
+          width: 50%;
+          margin-top: 0%;
+        }
+        footer li {
+          font-size: small;
+          margin-bottom: -2%;
+        }
+        .newsletter {
+          color: white;
+          background: black;
+          text-align: center;
+          width: 97.5%;
+          border-radius: 0.1rem;
+          padding: 0.5em;
+        }
+
+        .lottie-player {
+          display: none;
+        }
       }
     </style>
   </body>
